@@ -57,13 +57,21 @@ export function parsePalette(text: string, name = 'Своя палитра'): Pa
   } catch {
     colors = text.match(/#?[0-9a-fA-F]{6}\b|#[0-9a-fA-F]{3}\b/g) || [];
   }
-  colors = colors.map((c) => norm(c.startsWith('#') ? c : '#' + c)).filter(Boolean);
+  colors = [...new Set(colors.map((c) => norm(c.startsWith('#') ? c : '#' + c)).filter(Boolean))];
   if (colors.length < 2) return null;
-  // Нет явных ролей: сортируем по светлоте. Три самых светлых — фон
-  // (от светлого к тёмному), остальные — акценты объектов.
-  const byLight = [...new Set(colors)].sort((a, b) => lightness(b) - lightness(a));
-  const bg = byLight.length >= 6 ? [byLight[0], byLight[2], byLight[4]] : byLight.slice(0, 3);
-  const rest = byLight.filter((c) => !bg.includes(c));
+  // Порядок как в палитрах Figma: сначала 3 цвета фона, затем 3 акцента.
+  // Фон упорядочиваем от светлого к тёмному (роль «светлый/средний/тёмный»),
+  // акценты оставляем в заданном порядке.
+  let bg: string[], rest: string[];
+  if (colors.length >= 6) {
+    bg = colors.slice(0, 3).sort((a, b) => lightness(b) - lightness(a));
+    rest = colors.slice(3, 6);
+  } else {
+    // мало цветов: два самых светлых — фон, остальное — акценты
+    const byLight = [...colors].sort((a, b) => lightness(b) - lightness(a));
+    bg = byLight.slice(0, Math.max(1, colors.length - 2));
+    rest = byLight.filter((c) => !bg.includes(c));
+  }
   return {
     id: `custom-${Date.now().toString(36)}`,
     name,

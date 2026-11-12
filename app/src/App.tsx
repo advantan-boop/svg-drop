@@ -451,7 +451,7 @@ function Editor(props: {
             ))}
           </div>
           <div className="palette-load">
-            <textarea rows={2} placeholder="Вставьте HEX-коды: #FDD7B9 #FAC896 #D27532 #F9ECB0 #80DADA #BEEBEB" value={paletteText} onChange={(e) => setPaletteText(e.target.value)} />
+            <textarea rows={2} placeholder="3 цвета фона, затем 3 акцента: #FDD7B9 #FAC896 #D27532 #F9ECB0 #80DADA #BEEBEB" value={paletteText} onChange={(e) => setPaletteText(e.target.value)} />
             <div className="row">
               <button onClick={() => addPalette(paletteText)} disabled={!paletteText.trim()}>Применить</button>
               <label className="upload">Файл палитры<input type="file" accept=".json,.txt,.css" onChange={async (e) => { const f = e.target.files?.[0]; if (f) addPalette(await f.text(), f.name.replace(/\.\w+$/, '')); e.target.value = ''; }} /></label>
