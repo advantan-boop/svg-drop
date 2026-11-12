@@ -83,14 +83,12 @@ function Editor(props: {
   const [note, setNote] = useState('');
   const [picked, setPicked] = useState<string[]>([]);
   const [variations, setVariations] = useState<Variation[]>([]);
-  const [ai, setAi] = useState<{ ai: boolean; model?: string; reason?: string }>({ ai: false });
   const [libTab, setLibTab] = useState<Variant>('main');
   const [libSearch, setLibSearch] = useState('');
   const [paletteText, setPaletteText] = useState('');
   const [toast, setToast] = useState('');
 
   useEffect(() => { store.set(`${LS_KEY}.scene`, scene); }, [scene]);
-  useEffect(() => { fetch('/api/status').then((r) => r.json()).then(setAi).catch(() => setAi({ ai: false, reason: 'сервер без API' })); }, []);
   const flash = (t: string) => { setToast(t); setTimeout(() => setToast(''), 2200); };
 
   const objects = [...ctx.objects.values()];
@@ -115,7 +113,7 @@ function Editor(props: {
     setSelected(null);
   };
 
-  const generate = async () => {
+  const generate = () => {
     if (!query.trim()) return;
     setBusy(true);
     setNote('');
@@ -128,25 +126,9 @@ function Editor(props: {
         buildVariations(r.ids);
         return;
       }
-      if (ai.ai) {
-        const res = await fetch('/api/pick', {
-          method: 'POST',
-          headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ text: query, extra: customObjects.map((o) => ({ id: o.id, name: o.name, tags: o.tags })) }),
-        });
-        if (res.ok) {
-          const r = await res.json();
-          if (r.objects?.length) {
-            setPicked(r.objects);
-            setNote(`AI (${r.model}): ${r.reason}`);
-            buildVariations(r.objects, { paletteId: r.palette ?? scene.paletteId }, r.layout);
-            return;
-          }
-        }
-      }
       const r = pickByMetaphor(query, objects);
       setPicked(r.ids);
-      setNote(`${ai.ai ? 'AI недоступен, подбор по тегам. ' : ''}${r.reason}`);
+      setNote(r.reason);
       buildVariations(r.ids);
     } finally {
       setBusy(false);
@@ -297,7 +279,6 @@ function Editor(props: {
       <header className="top">
         <div className="brand">
           <span className="logo">◆</span> SVG-drop
-          <span className={`badge ${ai.ai ? 'on' : ''}`} title={ai.reason || ai.model}>{ai.ai ? `AI: ${ai.model}` : 'подбор по тегам'}</span>
         </div>
         <form className="prompt" onSubmit={(e) => { e.preventDefault(); generate(); }}>
           <div className="seg">

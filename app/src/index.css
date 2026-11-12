@@ -40,8 +40,6 @@ h3 small { font-weight: 400; }
 .top { display: flex; gap: 16px; align-items: center; padding: 10px 16px; background: var(--panel); border-bottom: 1px solid var(--line); }
 .brand { font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 8px; white-space: nowrap; }
 .logo { color: var(--accent); }
-.badge { font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 99px; background: var(--bg); color: var(--muted); }
-.badge.on { background: var(--soft); color: var(--accent); }
 .prompt { flex: 1; display: flex; gap: 8px; align-items: center; min-width: 0; }
 .prompt input { flex: 1; padding: 9px 12px; }
 .actions { display: flex; gap: 6px; }
