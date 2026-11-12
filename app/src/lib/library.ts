@@ -18,7 +18,9 @@ export function parseSvg(text: string): Asset {
     if (!w || !h) throw new Error('У SVG нет viewBox и размеров');
     vb = [0, 0, w, h];
   }
-  return { markup: svg.innerHTML, vb: vb as Asset['vb'] };
+  // innerHTML дописывает xmlns к каждому элементу — убираем, внутри <svg> он не нужен
+  const markup = svg.innerHTML.replace(/ xmlns="http:\/\/www\.w3\.org\/2000\/svg"/g, '');
+  return { markup, vb: vb as Asset['vb'] };
 }
 
 export async function loadIndex(): Promise<LibraryIndex> {

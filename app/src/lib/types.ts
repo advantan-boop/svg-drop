@@ -15,6 +15,8 @@ export interface LibObject {
   variants: Record<Variant, Partial<Record<Size, FileRef>>>;
   /** загружен пользователем */
   custom?: boolean;
+  /** для своих SVG: перекрашивать ли под палитру (по умолчанию да) */
+  recolor?: boolean;
 }
 
 export interface Palette {

@@ -35,9 +35,9 @@ export default function App() {
         const idx = await loadIndex();
         await preload(idx);
         // восстанавливаем загруженные пользователем SVG и палитры
-        const saved = store.get<{ name: string; svg: string }[]>(`${LS_KEY}.objects`) ?? [];
+        const saved = store.get<{ name: string; svg: string; recolor?: boolean }[]>(`${LS_KEY}.objects`) ?? [];
         const restored: LibObject[] = [];
-        for (const s of saved) try { restored.push(Object.assign(addCustomObject(s.name, s.svg), { svgText: s.svg })); } catch { /* битый файл */ }
+        for (const s of saved) try { restored.push({ ...addCustomObject(s.name, s.svg), recolor: s.recolor !== false }); } catch { /* битый файл */ }
         setCustomObjects(restored);
         setCustomPalettes(store.get<Palette[]>(`${LS_KEY}.palettes`) ?? []);
         setIndex(idx);
@@ -167,7 +167,8 @@ function Editor(props: {
     // масштаб — как у уже стоящих объектов, чтобы пропорции между предметами сохранялись
     const ref = scene.layers.find((l) => l.variant === 'main');
     const refAsset = ref && resolveAsset(ctx.objects.get(ref.objectId)!, ref.variant, scene.size);
-    const k = ref && refAsset ? ref.width / refAsset.vb[2] : Math.min((w * 0.35) / a.vb[2], (h * 0.5) / a.vb[3]);
+    // свои SVG нарисованы в другом масштабе — ставим их на ~30% кадра
+    const k = ref && refAsset && !o.custom ? ref.width / refAsset.vb[2] : Math.min((w * 0.3) / a.vb[2], (h * 0.45) / a.vb[3]);
     const layer: Layer = { uid: uid(), objectId: id, variant, x: x ?? w / 2, y: y ?? h / 2, width: a.vb[2] * k, rotation: 0, flip: false };
     setLayers([...scene.layers, layer]);
     setSelected(layer.uid);
@@ -230,6 +231,13 @@ function Editor(props: {
     store.set(`${LS_KEY}.objects`, saved);
     setCustomObjects((c) => [...c, ...added]);
     if (added.length) flash(`Добавлено в библиотеку: ${added.length}`);
+  };
+
+  const toggleRecolor = (id: string) => {
+    setCustomObjects((list) => list.map((o) => (o.id === id ? { ...o, recolor: o.recolor === false } : o)));
+    const saved = store.get<{ name: string; svg: string; recolor?: boolean }[]>(`${LS_KEY}.objects`) ?? [];
+    const idx = customObjects.findIndex((o) => o.id === id);
+    if (saved[idx]) { saved[idx].recolor = customObjects[idx].recolor === false; store.set(`${LS_KEY}.objects`, saved); }
   };
 
   const addPalette = (text: string, name?: string) => {
@@ -471,6 +479,11 @@ function Editor(props: {
               <div className="btns">
                 <button onClick={() => patchLayer(sel.uid, { flip: !sel.flip })}>⇋ Отразить</button>
                 <button onClick={() => patchLayer(sel.uid, { variant: sel.variant === 'main' ? 'background' : 'main' })} disabled={!ctx.objects.get(sel.objectId)?.variants.background[scene.size]}>{sel.variant === 'main' ? 'В фоновый' : 'В главный'}</button>
+                {ctx.objects.get(sel.objectId)?.custom && (
+                  <button onClick={() => toggleRecolor(sel.objectId)}>
+                    {ctx.objects.get(sel.objectId)?.recolor === false ? 'Перекрашивать' : 'Исходные цвета'}
+                  </button>
+                )}
                 <button onClick={() => duplicate(sel)}>Дублировать</button>
                 <button onClick={() => move(sel, 'top')}>Наверх</button>
                 <button onClick={() => move(sel, 'bottom')}>Вниз</button>

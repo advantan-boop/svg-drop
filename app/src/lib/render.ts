@@ -1,4 +1,4 @@
-import { buildColorMap, recolor } from './color';
+import { buildColorMap, buildForeignColorMap, colorsIn, recolor } from './color';
 import { getAsset, resolveAsset } from './library';
 import type { Asset, Layer, LibObject, LibraryIndex, Palette, Scene } from './types';
 
@@ -25,6 +25,15 @@ function scopeIds(markup: string, prefix: string) {
   return out;
 }
 
+const foreignCache = new Map<string, Map<string, string>>();
+function foreignMap(ctx: Ctx, scene: Scene, id: string, a: Asset) {
+  const pal = paletteOf(ctx, scene.paletteId);
+  const key = `${id}|${pal.id}|${pal.background.join()}|${pal.objects.join()}`;
+  let m = foreignCache.get(key);
+  if (!m) foreignCache.set(key, (m = buildForeignColorMap(colorsIn(a.markup), sourcePalette(ctx), pal)));
+  return m;
+}
+
 export function layerAsset(ctx: Ctx, scene: Scene, l: Layer): Asset | undefined {
   const o = ctx.objects.get(l.objectId);
   return o && resolveAsset(o, l.variant, scene.size);
@@ -46,8 +55,10 @@ export function layerMarkup(ctx: Ctx, scene: Scene, l: Layer, colorMap: Map<stri
   const a = layerAsset(ctx, scene, l);
   if (!a) return '';
   const o = ctx.objects.get(l.objectId)!;
-  // пользовательские объекты не перекрашиваем: у них своя палитра
-  const body = o.custom ? a.markup : recolor(a.markup, colorMap);
+  // свои SVG: цвета сопоставляются с ролями палитры по близости (если не выключено)
+  const body = o.custom
+    ? o.recolor === false ? a.markup : recolor(a.markup, foreignMap(ctx, scene, o.id, a))
+    : recolor(a.markup, colorMap);
   return `<g data-object="${o.id}" data-variant="${l.variant}" transform="${layerTransform(a, l)}">${scopeIds(body, l.uid)}</g>`;
 }
 

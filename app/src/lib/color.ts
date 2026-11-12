@@ -30,13 +30,60 @@ export function norm(c: string): string {
 }
 
 const ATTR_RE = /\b(fill|stroke|stop-color)="([^"]+)"/g;
+// цвета в style="fill:#..." и в <style>.cls{fill:#...} (экспорт из Illustrator и др.)
+const CSS_RE = /\b(fill|stroke|stop-color)\s*:\s*(#[0-9a-fA-F]{3,6}|white|black)\b/g;
 
 export function recolor(markup: string, map: Map<string, string>): string {
   if (!map.size) return markup;
-  return markup.replace(ATTR_RE, (m, attr, val) => {
-    const to = map.get(norm(val));
-    return to ? `${attr}="${to}"` : m;
-  });
+  return markup
+    .replace(ATTR_RE, (m, attr, val) => {
+      const to = map.get(norm(val));
+      return to ? `${attr}="${to}"` : m;
+    })
+    .replace(CSS_RE, (m, prop, val) => {
+      const to = map.get(norm(val));
+      return to ? `${prop}:${to}` : m;
+    });
+}
+
+/** Все цвета, встречающиеся в разметке */
+export function colorsIn(markup: string): string[] {
+  const out = new Set<string>();
+  for (const re of [ATTR_RE, CSS_RE]) for (const m of markup.matchAll(re)) { const c = norm(m[2]); if (c) out.add(c); }
+  return [...out];
+}
+
+const rgb = (hex: string) => { const n = parseInt(hex.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; };
+
+/** Почти чёрный / почти белый / серый — такие цвета (контуры, блики) не перекрашиваем */
+export function isNeutral(hex: string) {
+  const [r, g, b] = rgb(hex);
+  const max = Math.max(r, g, b), min = Math.min(r, g, b);
+  return max - min < 18 || max < 40 || min > 242;
+}
+
+/**
+ * Перекраска чужого SVG: у него свои цвета, а не цвета ролей библиотеки.
+ * Каждому цвету назначаем роль ближайшего цвета палитры-источника
+ * (по расстоянию в RGB с поправкой на восприятие), сохраняя разницу
+ * светлоты, и заменяем на цвет этой роли в целевой палитре.
+ */
+export function buildForeignColorMap(colors: string[], from: Palette, to: Palette): Map<string, string> {
+  const roles: { src: string; dst: string }[] = [];
+  from.background.slice(0, 3).forEach((c, i) => roles.push({ src: norm(c), dst: norm(to.background[i]) }));
+  from.objects.slice(0, 3).forEach((c, i) => roles.push({ src: norm(c), dst: norm(to.objects[i]) }));
+  const dist = (a: string, b: string) => {
+    const [r1, g1, b1] = rgb(a), [r2, g2, b2] = rgb(b);
+    const rm = (r1 + r2) / 2;
+    return Math.sqrt((2 + rm / 256) * (r1 - r2) ** 2 + 4 * (g1 - g2) ** 2 + (2 + (255 - rm) / 256) * (b1 - b2) ** 2);
+  };
+  const map = new Map<string, string>();
+  for (const c of colors) {
+    if (isNeutral(c)) continue;
+    const best = roles.reduce((p, r) => (dist(c, r.src) < dist(c, p.src) ? r : p));
+    map.set(c, best.dst);
+  }
+  return map;
 }
 
 /** Палитра из списка HEX-кодов (вставка текстом / .txt / .json) */
