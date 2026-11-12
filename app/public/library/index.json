@@ -1,0 +1,640 @@
+{
+  "sizes": [
+    "L",
+    "S"
+  ],
+  "palettes": [
+    {
+      "id": "palette-1",
+      "background": [
+        "#D7CDF5",
+        "#AA9BF0",
+        "#7864D7",
+        "#181817"
+      ],
+      "objects": [
+        "#F9ECB0",
+        "#F9A3AA",
+        "#FFE3E1",
+        "#FFFFFF"
+      ],
+      "name": "Лаванда"
+    },
+    {
+      "id": "palette-2",
+      "background": [
+        "#FDD7B9",
+        "#FAC896",
+        "#D27532",
+        "#181817"
+      ],
+      "objects": [
+        "#F9ECB0",
+        "#80DADA",
+        "#BEEBEB",
+        "#FFFFFF"
+      ],
+      "name": "Персик"
+    },
+    {
+      "id": "palette-3",
+      "background": [
+        "#BEEBEB",
+        "#80DADA",
+        "#5ABEBE",
+        "#181817"
+      ],
+      "objects": [
+        "#FFD4F2",
+        "#6D7BFC",
+        "#B6C6FE",
+        "#FFFFFF"
+      ],
+      "name": "Мята"
+    }
+  ],
+  "backgrounds": [
+    {
+      "id": "background-1",
+      "palette": "palette-1",
+      "files": {
+        "L": {
+          "file": "L/background-1.svg",
+          "width": 1000,
+          "height": 1000
+        },
+        "S": {
+          "file": "S/background-1.svg",
+          "width": 500,
+          "height": 500
+        }
+      }
+    },
+    {
+      "id": "background-2",
+      "palette": "palette-2",
+      "files": {
+        "L": {
+          "file": "L/background-2.svg",
+          "width": 1000,
+          "height": 1000
+        },
+        "S": {
+          "file": "S/background-2.svg",
+          "width": 500,
+          "height": 500
+        }
+      }
+    },
+    {
+      "id": "background-3",
+      "palette": "palette-3",
+      "files": {
+        "L": {
+          "file": "L/background-3.svg",
+          "width": 1000,
+          "height": 1000
+        },
+        "S": {
+          "file": "S/background-3.svg",
+          "width": 500,
+          "height": 500
+        }
+      }
+    }
+  ],
+  "objects": [
+    {
+      "id": "book",
+      "name": "Книга",
+      "kind": "surface",
+      "weight": 3,
+      "tags": [
+        "книга",
+        "учёба",
+        "обучение",
+        "образование",
+        "знания",
+        "чтение",
+        "курс",
+        "урок",
+        "литература",
+        "история",
+        "библиотека",
+        "справочник",
+        "инструкция",
+        "гайд",
+        "школа",
+        "университет",
+        "book",
+        "study",
+        "learn",
+        "education",
+        "knowledge",
+        "read"
+      ],
+      "variants": {
+        "main": {
+          "L": {
+            "file": "L/book-main.svg",
+            "width": 1451,
+            "height": 982
+          },
+          "S": {
+            "file": "S/book-main.svg",
+            "width": 728,
+            "height": 493
+          }
+        },
+        "background": {
+          "L": {
+            "file": "L/book-background.svg",
+            "width": 1451,
+            "height": 982
+          },
+          "S": {
+            "file": "S/book-background.svg",
+            "width": 728,
+            "height": 494
+          }
+        }
+      }
+    },
+    {
+      "id": "phone",
+      "name": "Смартфон",
+      "kind": "item",
+      "weight": 2,
+      "tags": [
+        "телефон",
+        "смартфон",
+        "приложение",
+        "мобильный",
+        "связь",
+        "звонок",
+        "онлайн",
+        "цифровой",
+        "сервис",
+        "интернет",
+        "уведомление",
+        "мессенджер",
+        "игра",
+        "головоломка",
+        "phone",
+        "mobile",
+        "app",
+        "online",
+        "digital"
+      ],
+      "variants": {
+        "main": {
+          "L": {
+            "file": "L/phone-main.svg",
+            "width": 802,
+            "height": 467
+          },
+          "S": {
+            "file": "S/phone-main.svg",
+            "width": 403,
+            "height": 235
+          }
+        },
+        "background": {
+          "L": {
+            "file": "L/phone-background.svg",
+            "width": 802,
+            "height": 467
+          },
+          "S": {
+            "file": "S/phone-background.svg",
+            "width": 403,
+            "height": 236
+          }
+        }
+      }
+    },
+    {
+      "id": "puzzle",
+      "name": "Пазл",
+      "kind": "item",
+      "weight": 1,
+      "tags": [
+        "пазл",
+        "решение",
+        "задача",
+        "команда",
+        "совместимость",
+        "интеграция",
+        "партнёрство",
+        "сотрудничество",
+        "стратегия",
+        "соединение",
+        "головоломка",
+        "вместе",
+        "подбор",
+        "puzzle",
+        "solution",
+        "team",
+        "match",
+        "integration"
+      ],
+      "variants": {
+        "main": {
+          "L": {
+            "file": "L/puzzle-main.svg",
+            "width": 549,
+            "height": 319
+          },
+          "S": {
+            "file": "S/puzzle-main.svg",
+            "width": 277,
+            "height": 161
+          }
+        },
+        "background": {
+          "L": {
+            "file": "L/puzzle-background.svg",
+            "width": 549,
+            "height": 319
+          },
+          "S": {
+            "file": "S/puzzle-background.svg",
+            "width": 277,
+            "height": 162
+          }
+        }
+      }
+    },
+    {
+      "id": "coin",
+      "name": "Монета с замком",
+      "kind": "item",
+      "weight": 1,
+      "tags": [
+        "монета",
+        "деньги",
+        "безопасность",
+        "защита",
+        "финансы",
+        "сбережения",
+        "накопления",
+        "вклад",
+        "оплата",
+        "замок",
+        "приватность",
+        "надёжность",
+        "кэшбэк",
+        "бонус",
+        "coin",
+        "money",
+        "security",
+        "savings",
+        "lock",
+        "safe"
+      ],
+      "variants": {
+        "main": {
+          "L": {
+            "file": "L/coin-main.svg",
+            "width": 291,
+            "height": 194
+          },
+          "S": {
+            "file": "S/coin-main.svg",
+            "width": 157,
+            "height": 105
+          }
+        },
+        "background": {
+          "L": {
+            "file": "L/coin-background.svg",
+            "width": 291,
+            "height": 193
+          },
+          "S": {
+            "file": "S/coin-background.svg",
+            "width": 157,
+            "height": 105
+          }
+        }
+      }
+    },
+    {
+      "id": "lamp",
+      "name": "Настольная лампа",
+      "kind": "tall",
+      "weight": 3,
+      "tags": [
+        "лампа",
+        "идея",
+        "свет",
+        "вдохновение",
+        "творчество",
+        "рабочее место",
+        "кабинет",
+        "ночь",
+        "вечер",
+        "концентрация",
+        "озарение",
+        "работа",
+        "учёба",
+        "lamp",
+        "idea",
+        "light",
+        "inspiration",
+        "workspace"
+      ],
+      "variants": {
+        "main": {
+          "L": {
+            "file": "L/lamp-main.svg",
+            "width": 951,
+            "height": 1134
+          },
+          "S": {
+            "file": "S/lamp-main.svg",
+            "width": 477,
+            "height": 569
+          }
+        },
+        "background": {
+          "L": {
+            "file": "L/lamp-background.svg",
+            "width": 951,
+            "height": 1134
+          },
+          "S": {
+            "file": "S/lamp-background.svg",
+            "width": 477,
+            "height": 570
+          }
+        }
+      }
+    },
+    {
+      "id": "headphones",
+      "name": "Наушники",
+      "kind": "item",
+      "weight": 2,
+      "tags": [
+        "наушники",
+        "музыка",
+        "подкаст",
+        "звук",
+        "аудио",
+        "слушать",
+        "аудиокнига",
+        "отдых",
+        "фокус",
+        "поддержка",
+        "колл-центр",
+        "вебинар",
+        "лекция",
+        "headphones",
+        "music",
+        "audio",
+        "podcast",
+        "listen",
+        "support"
+      ],
+      "variants": {
+        "main": {
+          "L": {
+            "file": "L/headphones-main.svg",
+            "width": 893,
+            "height": 696
+          },
+          "S": {
+            "file": "S/headphones-main.svg",
+            "width": 449,
+            "height": 351
+          }
+        },
+        "background": {
+          "L": {
+            "file": "L/headphones-background.svg",
+            "width": 893,
+            "height": 696
+          },
+          "S": {
+            "file": "S/headphones-background.svg",
+            "width": 449,
+            "height": 351
+          }
+        }
+      }
+    },
+    {
+      "id": "vase",
+      "name": "Ваза с тюльпанами",
+      "kind": "tall",
+      "weight": 2,
+      "tags": [
+        "цветы",
+        "тюльпаны",
+        "ваза",
+        "букет",
+        "подарок",
+        "праздник",
+        "8 марта",
+        "весна",
+        "забота",
+        "уют",
+        "дом",
+        "красота",
+        "благодарность",
+        "поздравление",
+        "flowers",
+        "gift",
+        "spring",
+        "holiday",
+        "care",
+        "home"
+      ],
+      "variants": {
+        "main": {
+          "L": {
+            "file": "L/vase-main.svg",
+            "width": 595,
+            "height": 752
+          },
+          "S": {
+            "file": "S/vase-main.svg",
+            "width": 329,
+            "height": 414
+          }
+        },
+        "background": {
+          "L": {
+            "file": "L/vase-background.svg",
+            "width": 596,
+            "height": 752
+          },
+          "S": {
+            "file": "S/vase-background.svg",
+            "width": 328,
+            "height": 414
+          }
+        }
+      }
+    },
+    {
+      "id": "wallet",
+      "name": "Кошелёк",
+      "kind": "surface",
+      "weight": 2,
+      "tags": [
+        "кошелёк",
+        "деньги",
+        "финансы",
+        "покупки",
+        "бюджет",
+        "расходы",
+        "оплата",
+        "кэшбэк",
+        "зарплата",
+        "карта",
+        "банк",
+        "шопинг",
+        "экономия",
+        "wallet",
+        "money",
+        "finance",
+        "budget",
+        "payment",
+        "bank"
+      ],
+      "variants": {
+        "main": {
+          "L": {
+            "file": "L/wallet-main.svg",
+            "width": 635,
+            "height": 401
+          },
+          "S": {
+            "file": "S/wallet-main.svg",
+            "width": 320,
+            "height": 203
+          }
+        },
+        "background": {
+          "L": {
+            "file": "L/wallet-background.svg",
+            "width": 635,
+            "height": 401
+          },
+          "S": {
+            "file": "S/wallet-background.svg",
+            "width": 320,
+            "height": 203
+          }
+        }
+      }
+    },
+    {
+      "id": "folder",
+      "name": "Папка с документами",
+      "kind": "surface",
+      "weight": 3,
+      "tags": [
+        "папка",
+        "документы",
+        "файлы",
+        "офис",
+        "работа",
+        "архив",
+        "бумаги",
+        "отчёт",
+        "проект",
+        "организация",
+        "договор",
+        "бизнес",
+        "бухгалтерия",
+        "налоги",
+        "folder",
+        "documents",
+        "files",
+        "office",
+        "work",
+        "report"
+      ],
+      "variants": {
+        "main": {
+          "L": {
+            "file": "L/folder-main.svg",
+            "width": 1245,
+            "height": 663
+          },
+          "S": {
+            "file": "S/folder-main.svg",
+            "width": 625,
+            "height": 334
+          }
+        },
+        "background": {
+          "L": {
+            "file": "L/folder-background.svg",
+            "width": 1245,
+            "height": 663
+          },
+          "S": {
+            "file": "S/folder-background.svg",
+            "width": 625,
+            "height": 335
+          }
+        }
+      }
+    },
+    {
+      "id": "pen",
+      "name": "Ручка",
+      "kind": "item",
+      "weight": 1,
+      "tags": [
+        "ручка",
+        "подпись",
+        "договор",
+        "письмо",
+        "заметки",
+        "писать",
+        "контракт",
+        "учёба",
+        "экзамен",
+        "творчество",
+        "план",
+        "список",
+        "pen",
+        "sign",
+        "write",
+        "contract",
+        "notes"
+      ],
+      "variants": {
+        "main": {
+          "L": {
+            "file": "L/pen-main.svg",
+            "width": 514,
+            "height": 291
+          },
+          "S": {
+            "file": "S/pen-main.svg",
+            "width": 259,
+            "height": 148
+          }
+        },
+        "background": {
+          "L": {
+            "file": "L/pen-background.svg",
+            "width": 514,
+            "height": 291
+          },
+          "S": {
+            "file": "S/pen-background.svg",
+            "width": 259,
+            "height": 148
+          }
+        }
+      }
+    }
+  ]
+}

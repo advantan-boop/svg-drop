@@ -1,0 +1,418 @@
+{
+  "source": "L.svg",
+  "backgrounds": [
+    {
+      "id": "L-bg-1",
+      "file": "L-bg-1.svg",
+      "width": 1000,
+      "height": 1000,
+      "paths": 10,
+      "fill": "#D7CDF5"
+    },
+    {
+      "id": "L-bg-2",
+      "file": "L-bg-2.svg",
+      "width": 1000,
+      "height": 1000,
+      "paths": 10,
+      "fill": "#BEEBEB"
+    },
+    {
+      "id": "L-bg-3",
+      "file": "L-bg-3.svg",
+      "width": 1000,
+      "height": 1000,
+      "paths": 4,
+      "fill": "#FDD7B9"
+    }
+  ],
+  "objects": [
+    {
+      "id": "L-obj-01",
+      "file": "L-obj-01.svg",
+      "width": 1451,
+      "height": 982,
+      "origin": [
+        389,
+        3465
+      ],
+      "paths": 54,
+      "bbox": [
+        392,
+        3467,
+        1838,
+        4444
+      ]
+    },
+    {
+      "id": "L-obj-02",
+      "file": "L-obj-02.svg",
+      "width": 802,
+      "height": 467,
+      "origin": [
+        2036,
+        3716
+      ],
+      "paths": 155,
+      "bbox": [
+        2039,
+        3719,
+        2835,
+        4180
+      ]
+    },
+    {
+      "id": "L-obj-03",
+      "file": "L-obj-03.svg",
+      "width": 549,
+      "height": 319,
+      "origin": [
+        3098,
+        3825
+      ],
+      "paths": 57,
+      "bbox": [
+        3100,
+        3828,
+        3644,
+        4141
+      ]
+    },
+    {
+      "id": "L-obj-04",
+      "file": "L-obj-04.svg",
+      "width": 291,
+      "height": 194,
+      "origin": [
+        4003,
+        3943
+      ],
+      "paths": 136,
+      "bbox": [
+        4005,
+        3946,
+        4292,
+        4134
+      ]
+    },
+    {
+      "id": "L-obj-05",
+      "file": "L-obj-05.svg",
+      "width": 951,
+      "height": 1134,
+      "origin": [
+        1820,
+        4436
+      ],
+      "paths": 27,
+      "bbox": [
+        1822,
+        4439,
+        2768,
+        5568
+      ]
+    },
+    {
+      "id": "L-obj-06",
+      "file": "L-obj-06.svg",
+      "width": 893,
+      "height": 696,
+      "origin": [
+        468,
+        4801
+      ],
+      "paths": 84,
+      "bbox": [
+        470,
+        4803,
+        1358,
+        5495
+      ]
+    },
+    {
+      "id": "L-obj-07",
+      "file": "L-obj-07.svg",
+      "width": 595,
+      "height": 752,
+      "origin": [
+        3034,
+        4710
+      ],
+      "paths": 131,
+      "bbox": [
+        3036,
+        4713,
+        3627,
+        5460
+      ]
+    },
+    {
+      "id": "L-obj-08",
+      "file": "L-obj-08.svg",
+      "width": 635,
+      "height": 401,
+      "origin": [
+        3866,
+        5093
+      ],
+      "paths": 86,
+      "bbox": [
+        3868,
+        5095,
+        4499,
+        5491
+      ]
+    },
+    {
+      "id": "L-obj-09",
+      "file": "L-obj-09.svg",
+      "width": 1245,
+      "height": 663,
+      "origin": [
+        363,
+        5918
+      ],
+      "paths": 22,
+      "bbox": [
+        365,
+        5920,
+        1606,
+        6579
+      ]
+    },
+    {
+      "id": "L-obj-10",
+      "file": "L-obj-10.svg",
+      "width": 514,
+      "height": 291,
+      "origin": [
+        1793,
+        6125
+      ],
+      "paths": 24,
+      "bbox": [
+        1796,
+        6128,
+        2304,
+        6413
+      ]
+    },
+    {
+      "id": "L-obj-11",
+      "file": "L-obj-11.svg",
+      "width": 1451,
+      "height": 982,
+      "origin": [
+        389,
+        7489
+      ],
+      "paths": 54,
+      "bbox": [
+        392,
+        7492,
+        1838,
+        8468
+      ]
+    },
+    {
+      "id": "L-obj-12",
+      "file": "L-obj-12.svg",
+      "width": 802,
+      "height": 467,
+      "origin": [
+        2036,
+        7740
+      ],
+      "paths": 155,
+      "bbox": [
+        2039,
+        7743,
+        2835,
+        8204
+      ]
+    },
+    {
+      "id": "L-obj-13",
+      "file": "L-obj-13.svg",
+      "width": 549,
+      "height": 319,
+      "origin": [
+        3098,
+        7849
+      ],
+      "paths": 57,
+      "bbox": [
+        3100,
+        7852,
+        3644,
+        8165
+      ]
+    },
+    {
+      "id": "L-obj-14",
+      "file": "L-obj-14.svg",
+      "width": 291,
+      "height": 193,
+      "origin": [
+        4003,
+        7968
+      ],
+      "paths": 136,
+      "bbox": [
+        4005,
+        7970,
+        4292,
+        8159
+      ]
+    },
+    {
+      "id": "L-obj-15",
+      "file": "L-obj-15.svg",
+      "width": 951,
+      "height": 1134,
+      "origin": [
+        1820,
+        8460
+      ],
+      "paths": 27,
+      "bbox": [
+        1822,
+        8463,
+        2768,
+        9592
+      ]
+    },
+    {
+      "id": "L-obj-16",
+      "file": "L-obj-16.svg",
+      "width": 893,
+      "height": 696,
+      "origin": [
+        468,
+        8825
+      ],
+      "paths": 84,
+      "bbox": [
+        470,
+        8827,
+        1358,
+        9519
+      ]
+    },
+    {
+      "id": "L-obj-17",
+      "file": "L-obj-17.svg",
+      "width": 596,
+      "height": 752,
+      "origin": [
+        3058,
+        8795
+      ],
+      "paths": 131,
+      "bbox": [
+        3061,
+        8798,
+        3651,
+        9545
+      ]
+    },
+    {
+      "id": "L-obj-18",
+      "file": "L-obj-18.svg",
+      "width": 635,
+      "height": 401,
+      "origin": [
+        3866,
+        9117
+      ],
+      "paths": 86,
+      "bbox": [
+        3868,
+        9119,
+        4499,
+        9516
+      ]
+    },
+    {
+      "id": "L-obj-19",
+      "file": "L-obj-19.svg",
+      "width": 1245,
+      "height": 663,
+      "origin": [
+        363,
+        9942
+      ],
+      "paths": 22,
+      "bbox": [
+        365,
+        9944,
+        1606,
+        10603
+      ]
+    },
+    {
+      "id": "L-obj-20",
+      "file": "L-obj-20.svg",
+      "width": 514,
+      "height": 291,
+      "origin": [
+        1793,
+        10149
+      ],
+      "paths": 24,
+      "bbox": [
+        1796,
+        10152,
+        2304,
+        10437
+      ]
+    }
+  ],
+  "palettes": [
+    {
+      "id": "palette-1",
+      "background": [
+        "#D7CDF5",
+        "#AA9BF0",
+        "#7864D7",
+        "#181817"
+      ],
+      "objects": [
+        "#F9ECB0",
+        "#F9A3AA",
+        "#FFE3E1",
+        "#FFFFFF"
+      ]
+    },
+    {
+      "id": "palette-2",
+      "background": [
+        "#FDD7B9",
+        "#FAC896",
+        "#D27532",
+        "#181817"
+      ],
+      "objects": [
+        "#F9ECB0",
+        "#80DADA",
+        "#BEEBEB",
+        "#FFFFFF"
+      ]
+    },
+    {
+      "id": "palette-3",
+      "background": [
+        "#BEEBEB",
+        "#80DADA",
+        "#5ABEBE",
+        "#181817"
+      ],
+      "objects": [
+        "#FFD4F2",
+        "#6D7BFC",
+        "#B6C6FE",
+        "#FFFFFF"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+node_modules
+app/dist
+.DS_Store
+# исходники лежат в source/ под ASCII-именами
+Размер*.svg

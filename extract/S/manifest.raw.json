@@ -1,0 +1,418 @@
+{
+  "source": "S.svg",
+  "backgrounds": [
+    {
+      "id": "S-bg-1",
+      "file": "S-bg-1.svg",
+      "width": 500,
+      "height": 500,
+      "paths": 10,
+      "fill": "#D7CDF5"
+    },
+    {
+      "id": "S-bg-2",
+      "file": "S-bg-2.svg",
+      "width": 500,
+      "height": 500,
+      "paths": 10,
+      "fill": "#BEEBEB"
+    },
+    {
+      "id": "S-bg-3",
+      "file": "S-bg-3.svg",
+      "width": 500,
+      "height": 500,
+      "paths": 4,
+      "fill": "#FDD7B9"
+    }
+  ],
+  "objects": [
+    {
+      "id": "S-obj-01",
+      "file": "S-obj-01.svg",
+      "width": 728,
+      "height": 493,
+      "origin": [
+        266,
+        2058
+      ],
+      "paths": 51,
+      "bbox": [
+        268,
+        2060,
+        991,
+        2549
+      ]
+    },
+    {
+      "id": "S-obj-02",
+      "file": "S-obj-02.svg",
+      "width": 403,
+      "height": 235,
+      "origin": [
+        1292,
+        2251
+      ],
+      "paths": 96,
+      "bbox": [
+        1294,
+        2253,
+        1692,
+        2484
+      ]
+    },
+    {
+      "id": "S-obj-03",
+      "file": "S-obj-03.svg",
+      "width": 277,
+      "height": 161,
+      "origin": [
+        1923,
+        2282
+      ],
+      "paths": 57,
+      "bbox": [
+        1925,
+        2284,
+        2197,
+        2441
+      ]
+    },
+    {
+      "id": "S-obj-04",
+      "file": "S-obj-04.svg",
+      "width": 157,
+      "height": 105,
+      "origin": [
+        2496,
+        2337
+      ],
+      "paths": 130,
+      "bbox": [
+        2498,
+        2340,
+        2651,
+        2440
+      ]
+    },
+    {
+      "id": "S-obj-05",
+      "file": "S-obj-05.svg",
+      "width": 449,
+      "height": 351,
+      "origin": [
+        372,
+        2933
+      ],
+      "paths": 79,
+      "bbox": [
+        375,
+        2936,
+        819,
+        3282
+      ]
+    },
+    {
+      "id": "S-obj-06",
+      "file": "S-obj-06.svg",
+      "width": 477,
+      "height": 569,
+      "origin": [
+        1190,
+        2816
+      ],
+      "paths": 27,
+      "bbox": [
+        1192,
+        2818,
+        1665,
+        3383
+      ]
+    },
+    {
+      "id": "S-obj-07",
+      "file": "S-obj-07.svg",
+      "width": 329,
+      "height": 414,
+      "origin": [
+        1916,
+        2946
+      ],
+      "paths": 131,
+      "bbox": [
+        1919,
+        2949,
+        2242,
+        3358
+      ]
+    },
+    {
+      "id": "S-obj-08",
+      "file": "S-obj-08.svg",
+      "width": 320,
+      "height": 203,
+      "origin": [
+        2397,
+        3185
+      ],
+      "paths": 83,
+      "bbox": [
+        2399,
+        3188,
+        2715,
+        3386
+      ]
+    },
+    {
+      "id": "S-obj-09",
+      "file": "S-obj-09.svg",
+      "width": 625,
+      "height": 334,
+      "origin": [
+        259,
+        3739
+      ],
+      "paths": 20,
+      "bbox": [
+        261,
+        3741,
+        882,
+        4071
+      ]
+    },
+    {
+      "id": "S-obj-10",
+      "file": "S-obj-10.svg",
+      "width": 259,
+      "height": 148,
+      "origin": [
+        1296,
+        3855
+      ],
+      "paths": 24,
+      "bbox": [
+        1298,
+        3858,
+        1552,
+        4000
+      ]
+    },
+    {
+      "id": "S-obj-11",
+      "file": "S-obj-11.svg",
+      "width": 728,
+      "height": 494,
+      "origin": [
+        266,
+        5159
+      ],
+      "paths": 54,
+      "bbox": [
+        268,
+        5162,
+        991,
+        5650
+      ]
+    },
+    {
+      "id": "S-obj-12",
+      "file": "S-obj-12.svg",
+      "width": 403,
+      "height": 236,
+      "origin": [
+        1292,
+        5352
+      ],
+      "paths": 155,
+      "bbox": [
+        1294,
+        5355,
+        1692,
+        5585
+      ]
+    },
+    {
+      "id": "S-obj-13",
+      "file": "S-obj-13.svg",
+      "width": 277,
+      "height": 162,
+      "origin": [
+        1923,
+        5383
+      ],
+      "paths": 57,
+      "bbox": [
+        1925,
+        5386,
+        2197,
+        5542
+      ]
+    },
+    {
+      "id": "S-obj-14",
+      "file": "S-obj-14.svg",
+      "width": 157,
+      "height": 105,
+      "origin": [
+        2496,
+        5439
+      ],
+      "paths": 136,
+      "bbox": [
+        2498,
+        5441,
+        2651,
+        5541
+      ]
+    },
+    {
+      "id": "S-obj-15",
+      "file": "S-obj-15.svg",
+      "width": 449,
+      "height": 351,
+      "origin": [
+        372,
+        6035
+      ],
+      "paths": 84,
+      "bbox": [
+        375,
+        6037,
+        819,
+        6383
+      ]
+    },
+    {
+      "id": "S-obj-16",
+      "file": "S-obj-16.svg",
+      "width": 477,
+      "height": 570,
+      "origin": [
+        1190,
+        5917
+      ],
+      "paths": 27,
+      "bbox": [
+        1192,
+        5920,
+        1665,
+        6484
+      ]
+    },
+    {
+      "id": "S-obj-17",
+      "file": "S-obj-17.svg",
+      "width": 328,
+      "height": 414,
+      "origin": [
+        1889,
+        6049
+      ],
+      "paths": 131,
+      "bbox": [
+        1891,
+        6052,
+        2215,
+        6461
+      ]
+    },
+    {
+      "id": "S-obj-18",
+      "file": "S-obj-18.svg",
+      "width": 320,
+      "height": 203,
+      "origin": [
+        2397,
+        6287
+      ],
+      "paths": 86,
+      "bbox": [
+        2399,
+        6289,
+        2715,
+        6487
+      ]
+    },
+    {
+      "id": "S-obj-19",
+      "file": "S-obj-19.svg",
+      "width": 625,
+      "height": 335,
+      "origin": [
+        259,
+        6840
+      ],
+      "paths": 22,
+      "bbox": [
+        261,
+        6843,
+        882,
+        7172
+      ]
+    },
+    {
+      "id": "S-obj-20",
+      "file": "S-obj-20.svg",
+      "width": 259,
+      "height": 148,
+      "origin": [
+        1296,
+        6956
+      ],
+      "paths": 24,
+      "bbox": [
+        1298,
+        6959,
+        1552,
+        7102
+      ]
+    }
+  ],
+  "palettes": [
+    {
+      "id": "palette-1",
+      "background": [
+        "#D7CDF5",
+        "#AA9BF0",
+        "#7864D7",
+        "#181817"
+      ],
+      "objects": [
+        "#F9ECB0",
+        "#F9A3AA",
+        "#FFE3E1",
+        "#FFFFFF"
+      ]
+    },
+    {
+      "id": "palette-2",
+      "background": [
+        "#FDD7B9",
+        "#FAC896",
+        "#D27532",
+        "#181817"
+      ],
+      "objects": [
+        "#F9ECB0",
+        "#80DADA",
+        "#BEEBEB",
+        "#FFFFFF"
+      ]
+    },
+    {
+      "id": "palette-3",
+      "background": [
+        "#BEEBEB",
+        "#80DADA",
+        "#5ABEBE",
+        "#181817"
+      ],
+      "objects": [
+        "#FFD4F2",
+        "#6D7BFC",
+        "#B6C6FE",
+        "#FFFFFF"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="1056 176 500 500" fill="none">
+<defs><clipPath id="S-bg-3-clip"><rect x="1056" y="176" width="500" height="500"/></clipPath></defs>
+<g clip-path="url(#S-bg-3-clip)">
+<rect width="500" height="500" transform="translate(1056 176)" fill="#FDD7B9"/>
+<path d="M1556.21 698.452C1600.84 628.945 1568.2 557.733 1572.8 545.085L1291.33 715.96L1556.21 698.452Z" fill="#FAC896"/>
+<line x1="1184.84" y1="131.704" x2="1578.58" y2="353.5" stroke="#D27532"/>
+<line x1="1248.26" y1="742.125" x2="1560.9" y2="551.516" stroke="#D27532"/>
+</g>
+</svg>
