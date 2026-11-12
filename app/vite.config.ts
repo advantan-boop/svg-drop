@@ -9,6 +9,9 @@ const api = (): Plugin => ({
   configurePreviewServer(s) { s.middlewares.use(aiMiddleware(s.config.root)); },
 });
 
+// GITHUB_PAGES=1 — статическая сборка для https://<user>.github.io/svg-drop/
+// (без сервера: подбор по метафоре работает локально, по тегам)
 export default defineConfig({
+  base: process.env.GITHUB_PAGES ? '/svg-drop/' : '/',
   plugins: [react(), api()],
 });
